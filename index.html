@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Ridhima ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    section {
+      min-height: 100vh;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    section.active { display: flex; }
+
+    .card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 40px 30px;
+      max-width: 720px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 20px;
+    }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.2rem; }
+    p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    button {
+      background: #fff;
+      color: #ff4d6d;
+      border: none;
+      padding: 12px 26px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-weight: 500;
+    }
+    button:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.25); }
+
+    @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+    .fade-in { animation: fadeIn 2s ease forwards; }
+
+    @keyframes pulse { 0%{transform:scale(1)} 50%{transform:scale(1.05)} 100%{transform:scale(1)} }
+    .pulse { animation: pulse 2s infinite; }
+
+    .heart {
+      position: fixed; bottom: -20px; pointer-events: none;
+      color: rgba(255,255,255,0.85);
+      animation: floatUp linear infinite;
+    }
+    @keyframes floatUp {
+      from{transform:translateY(0);opacity:1}
+      to{transform:translateY(-110vh);opacity:0}
+    }
+  </style>
+</head>
+<body>
+
+<audio id="bgMusic" src="In-Your-Eyes.mp3" preload="auto" loop></audio>
+
+<!-- HOME -->
+<section id="home" class="active">
+  <div class="card">
+    <h1>Happy Valentine’s Day ❤️</h1>
+    <p>
+      Hey Ridhima,<br><br>
+      This little space is made only for you.
+      Take your time, tap gently, and let everything unfold.
+    </p>
+    <button onclick="startMusic(); go('sec1')">Tap to continue</button>
+  </div>
+</section>
+
+<!-- SECTION 1 -->
+<section id="sec1">
+  <div class="card fade-in">
+    <h2>What You Mean To Me</h2>
+    <p>You are my calm in chaos, my soft place after hard days.</p>
+    <p>Even when things feel confusing or fragile, my intentions with you have always been pure.</p>
+    <button onclick="go('memories')">One more thing</button>
+  </div>
+</section>
+
+<!-- MEMORIES -->
+<section id="memories">
+  <div class="card fade-in">
+    <h2>Us, in moments 💗</h2>
+    <p>Some memories don’t fade. They stay.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin:20px 0;">
+      <img src="img1.jpg" style="width:100%;border-radius:14px;" />
+      <img src="img2.jpg" style="width:100%;border-radius:14px;" />
+      <img src="img3.jpg" style="width:100%;border-radius:14px;" />
+      <img src="img4.jpg" style="width:100%;border-radius:14px;" />
+    </div>
+    <p>I remember how happy we both were the day we confessed.</p>
+    <p>I was on seventh sky when you said you liked me too.</p>
+    <button onclick="go('sec2')">Keep going</button>
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section id="sec2">
+  <div class="card fade-in">
+    <h2>No Pressure, Just Truth</h2>
+    <p>I’m just here — choosing you, respecting your pace, and hoping I get to keep making you smile.</p>
+    <button onclick="go('sec3')">Final page</button>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section id="sec3">
+  <div class="card fade-in">
+    <h2 class="pulse">So… 🌸</h2>
+    <p><span id="type"></span></p>
+    <div id="playHeart" onclick="playMusic()" style="font-size:2.5rem;cursor:pointer;margin:18px 0;">💗</div>
+    <p style="font-size:0.9rem;opacity:0.85;">Tap the heart</p>
+    <p style="margin-top:20px;font-weight:500;">— Anant ❤️</p>
+  </div>
+</section>
+
+<script>
+  function go(id) {
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if (id === 'sec3') startFinal();
+  }
+
+  const msg = "Ridhima, loving you was never a decision — it happened naturally. With every conversation, every laugh, and even every silence, I found myself choosing you again and again. You became that thought which stayed quietly in my mind, and that warmth I didn’t want to lose.
+
+I know I’m not perfect, and I don’t claim to have all the answers. But what I do have is sincerity — the kind that stays even when things feel uncertain. With time, patience, and understanding, I promise to keep learning you, and learning myself too.
+
+You matter to me in ways that are hard to put into words. Not loudly, not dramatically — but deeply, honestly, and consistently. And no matter where life takes us from here, this part will always be true.
+
+I love you, Ridhima. ❤️💗";
+  let i = 0, typed = false;
+
+  function startFinal() {
+    if (typed) return;
+    typed = true;
+    const el = document.getElementById('type');
+    (function type() {
+      if (i < msg.length) {
+        el.textContent += msg.charAt(i++);
+        setTimeout(type, 65);
+      }
+    })();
+  }
+
+  function startMusic() {
+    const m = document.getElementById('bgMusic');
+    m.volume = 0.6;
+    m.play().catch(()=>{});
+  }
+
+  function playMusic() {
+    const m = document.getElementById('bgMusic');
+    m.play().catch(()=>{});
+    document.getElementById('playHeart').textContent = '❤️';
+  }
+
+  setInterval(() => {
+    const h = document.createElement('div');
+    h.className = 'heart';
+    h.textContent = '❤';
+    h.style.left = Math.random() * 100 + 'vw';
+    h.style.fontSize = (14 + Math.random() * 22) + 'px';
+    h.style.animationDuration = (4 + Math.random() * 4) + 's';
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 8000);
+  }, 350);
+</script>
+
+</body>
+</html>
